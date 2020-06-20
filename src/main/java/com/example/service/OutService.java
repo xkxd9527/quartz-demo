@@ -8,6 +8,8 @@ public interface OutService {
 
     /**
      * 简单输出
+     *
+     * @return
      */
     String execute();
 }

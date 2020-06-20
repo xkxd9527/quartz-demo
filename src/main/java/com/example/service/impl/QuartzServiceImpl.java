@@ -42,12 +42,6 @@ public class QuartzServiceImpl implements IQuartzService {
             System.out.println(scheduler.getSchedulerName());
             // 把作业和触发器注册到任务调度中, 启动调度
             scheduler.scheduleJob(jobDetail, cronTrigger);
-
-//            // 启动调度
-//            scheduler.start();
-//            Thread.sleep(30000);
-//            // 停止调度
-//            scheduler.shutdown();
         } catch (Exception e) {
             e.printStackTrace();
         }

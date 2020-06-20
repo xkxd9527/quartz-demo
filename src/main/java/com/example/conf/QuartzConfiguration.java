@@ -14,8 +14,18 @@ import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 @Configuration
 @EnableScheduling
 public class QuartzConfiguration {
+
+    private final JobFactory jobFactory;
+
+    /**
+     * 构造器注入
+     *
+     * @param jobFactory
+     */
     @Autowired
-    private JobFactory jobFactory;
+    public QuartzConfiguration(JobFactory jobFactory) {
+        this.jobFactory = jobFactory;
+    }
 
     @Bean
     public SchedulerFactoryBean schedulerFactoryBean() {
